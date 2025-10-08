@@ -1,0 +1,194 @@
+---
+import Arrow from "./icons/Arrow.astro";
+import Award from "./icons/Award.astro";
+import Users from "./icons/User.astro";
+import Trending from "./icons/Trending.astro";
+import Shield from "./icons/Shield.astro";
+---
+
+<section
+    class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+>
+    {/* Gradient Background */}
+    <div
+        class="absolute inset-0 bg-gradient-to-br from-background via-background to-amber-50/20 dark:to-amber-950/10"
+    >
+    </div>
+
+    {/* Animated Gradient Orbs */}
+    <div
+        class="absolute top-1/4 -left-48 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl animate-pulse"
+    >
+    </div>
+    <div
+        class="absolute bottom-1/4 -right-48 w-96 h-96 bg-orange-400/20 rounded-full blur-3xl animate-pulse delay-1000"
+    >
+    </div>
+
+    <div class="container relative z-10 mx-auto px-4 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            {/* Left Column - Content */}
+            <div class="space-y-8 text-center lg:text-left">
+                {/* Badge */}
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800"
+                >
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800"
+                    >
+                        <div class="w-4 h-4 text-amber-600">
+                            <Award class="w-4 h-4" />
+                        </div>
+                        <span
+                            class="text-sm font-medium text-amber-900 dark:text-amber-100"
+                        >
+                            Asesores de Seguros Certificados
+                        </span>
+                    </div>
+                </div>
+
+                {/* Main Heading */}
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none"
+                >
+                    La manera más segura de <span class="text-gradient-gold"
+                        >proteger tu futuro</span
+                    >
+                </h1>
+
+                {/* Subheading */}
+                <p
+                    class="text-lg md:text-xl text-muted-foreground leading-relaxed"
+                >
+                    Conectamos a personas y empresas con las mejores
+                    aseguradoras del mercado. Encuentra el seguro perfecto para
+                    vida, salud, vehículo y más.
+                </p>
+
+                {/* CTA Buttons */}
+                <div
+                    class="flex flex-col sm:flex-row items-center lg:items-start gap-4 pt-4"
+                >
+                    <button
+                        class="gradient-gold text-white border-0 text-base px-8 h-12 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+                    >
+                        Cotizar Gratis
+                        <Arrow
+                            class="w-4 h-4 text-white hover:translate-x-1 transition-transform"
+                        />
+                    </button>
+                    <button
+                        class="text-base px-8 h-12 bg-white border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+                    >
+                        Ver Seguros
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative lg:order-last order-first">
+                <div
+                    class="relative rounded-3xl overflow-hidden shadow-2xl border border-border/50"
+                >
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-orange-500/20 mix-blend-overlay z-10"
+                    >
+                    </div>
+                    <img
+                        src="/public/images/family.jpg"
+                        alt="Familia feliz protegida con seguros"
+                        width={800}
+                        height={600}
+                        class="w-full h-auto object-cover"
+                    />
+                </div>
+                {/* Floating Card */}
+                <div
+                    class="absolute -bottom-6 -left-6 bg-amber-50 border border-border rounded-2xl p-6 shadow-xl backdrop-blur-sm"
+                >
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center"
+                        >
+                            <div class="w-6 h-6 text-white">
+                                <Shield class="w-full h-full" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gradient-gold">
+                                +10,000
+                            </div>
+                            <div class="text-sm text-muted-foreground">
+                                Familias Protegidas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Stats Grid - Moved below */}
+        <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-24 max-w-5xl mx-auto"
+        >
+            <div
+                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
+            >
+                <div
+                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
+                >
+                    <div class="w-6 h-6 text-amber-600">
+                        <Shield class="w-full h-full" />
+                    </div>
+                </div>
+                <div class="text-3xl font-bold text-gradient-gold">15+</div>
+                <div class="text-sm text-muted-foreground mt-1">
+                    Aseguradoras
+                </div>
+            </div>
+
+            <div
+                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
+            >
+                <div
+                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
+                >
+                    <div class="w-6 h-6 text-amber-600">
+                        <Users class="w-full h-full" />
+                    </div>
+                </div>
+                <div class="text-3xl font-bold text-gradient-gold">10k+</div>
+                <div class="text-sm text-muted-foreground mt-1">Clientes</div>
+            </div>
+
+            <div
+                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
+            >
+                <div
+                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
+                >
+                    <div class="w-6 h-6 text-amber-600">
+                        <Trending class="w-full h-full" />
+                    </div>
+                </div>
+                <div class="text-3xl font-bold text-gradient-gold">98%</div>
+                <div class="text-sm text-muted-foreground mt-1">
+                    Satisfacción
+                </div>
+            </div>
+
+            <div
+                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
+            >
+                <div
+                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
+                >
+                    <div class="w-6 h-6 text-amber-600">
+                        <Award class="w-full h-full" />
+                    </div>
+                </div>
+                <div class="text-3xl font-bold text-gradient-gold">20+</div>
+                <div class="text-sm text-muted-foreground mt-1">Años</div>
+            </div>
+        </div>
+    </div>
+</section>
