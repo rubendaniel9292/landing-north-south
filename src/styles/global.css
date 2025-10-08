@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+/* Google Fonts Configuration */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Typography Classes */
+.font-title {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-subtitle {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Smooth scroll behavior with slower timing */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom smooth scroll with CSS */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Offset for fixed navbar */
+section {
+  scroll-margin-top: 80px;
+}
+
 :root {
   /* Modern agency theme with sophisticated gradients and golden accents */
   --background: oklch(1 0 0);

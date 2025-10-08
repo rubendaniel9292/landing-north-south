@@ -1,13 +1,14 @@
 ---
 import Arrow from "./icons/Arrow.astro";
 import Award from "./icons/Award.astro";
-import Users from "./icons/User.astro";
-import Trending from "./icons/Trending.astro";
+
 import Shield from "./icons/Shield.astro";
+import CounterCard from "./CounterCard.jsx";
 ---
 
 <section
-    class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+    id="home"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden"
 >
     {/* Gradient Background */}
     <div
@@ -33,23 +34,19 @@ import Shield from "./icons/Shield.astro";
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800"
                 >
-                    <div
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800"
-                    >
-                        <div class="w-4 h-4 text-amber-600">
-                            <Award class="w-4 h-4" />
-                        </div>
-                        <span
-                            class="text-sm font-medium text-amber-900 dark:text-amber-100"
-                        >
-                            Asesores de Seguros Certificados
-                        </span>
+                    <div class="w-4 h-4 text-amber-600">
+                        <Award class="w-4 h-4" />
                     </div>
+                    <span
+                        class="text-sm font-medium text-amber-900 dark:text-amber-100"
+                    >
+                        Asesores de Seguros Certificados
+                    </span>
                 </div>
 
                 {/* Main Heading */}
                 <h1
-                    class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none"
+                    class="font-title text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none"
                 >
                     La manera más segura de <span class="text-gradient-gold"
                         >proteger tu futuro</span
@@ -58,7 +55,7 @@ import Shield from "./icons/Shield.astro";
 
                 {/* Subheading */}
                 <p
-                    class="text-lg md:text-xl text-muted-foreground leading-relaxed"
+                    class="font-body text-lg md:text-xl text-gray-600 leading-relaxed"
                 >
                     Conectamos a personas y empresas con las mejores
                     aseguradoras del mercado. Encuentra el seguro perfecto para
@@ -69,19 +66,21 @@ import Shield from "./icons/Shield.astro";
                 <div
                     class="flex flex-col sm:flex-row items-center lg:items-start gap-4 pt-4"
                 >
-                    <button
+                    <a
+                        href="#contact"
                         class="gradient-gold text-white border-0 text-base px-8 h-12 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2"
                     >
                         Cotizar Gratis
                         <Arrow
                             class="w-4 h-4 text-white hover:translate-x-1 transition-transform"
                         />
-                    </button>
-                    <button
-                        class="text-base px-8 h-12 bg-white border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+                    </a>
+                    <a
+                        href="#insurance"
+                        class="text-base px-8 h-12 bg-white border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 flex items-center justify-center"
                     >
                         Ver Seguros
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -94,7 +93,7 @@ import Shield from "./icons/Shield.astro";
                     >
                     </div>
                     <img
-                        src="/public/images/family.jpg"
+                        src="/images/family.jpg"
                         alt="Familia feliz protegida con seguros"
                         width={800}
                         height={600}
@@ -126,68 +125,52 @@ import Shield from "./icons/Shield.astro";
             </div>
         </div>
 
-        {/* Stats Grid - Moved below */}
-        <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-24 max-w-5xl mx-auto"
-        >
-            <div
-                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
-            >
-                <div
-                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
-                >
-                    <div class="w-6 h-6 text-amber-600">
-                        <Shield class="w-full h-full" />
-                    </div>
-                </div>
-                <div class="text-3xl font-bold text-gradient-gold">15+</div>
-                <div class="text-sm text-muted-foreground mt-1">
-                    Aseguradoras
-                </div>
+        {/* Stats Grid - Animated Counters */}
+        <div class="pt-24 pb-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Nuestra Experiencia en Números
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Más de dos décadas protegiendo familias y empresas con la mejor cobertura de seguros
+                </p>
             </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <CounterCard
+                    icon="shield"
+                    targetValue={15}
+                    suffix="+"
+                    label="Aseguradoras"
+                    duration={2000}
+                    client:load
+                />
 
-            <div
-                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
-            >
-                <div
-                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
-                >
-                    <div class="w-6 h-6 text-amber-600">
-                        <Users class="w-full h-full" />
-                    </div>
-                </div>
-                <div class="text-3xl font-bold text-gradient-gold">10k+</div>
-                <div class="text-sm text-muted-foreground mt-1">Clientes</div>
-            </div>
+                <CounterCard
+                    icon="users"
+                    targetValue={10000}
+                    suffix="+"
+                    label="Clientes"
+                    duration={2500}
+                    client:load
+                />
 
-            <div
-                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
-            >
-                <div
-                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
-                >
-                    <div class="w-6 h-6 text-amber-600">
-                        <Trending class="w-full h-full" />
-                    </div>
-                </div>
-                <div class="text-3xl font-bold text-gradient-gold">98%</div>
-                <div class="text-sm text-muted-foreground mt-1">
-                    Satisfacción
-                </div>
-            </div>
+                <CounterCard
+                    icon="trending"
+                    targetValue={98}
+                    suffix="%"
+                    label="Satisfacción"
+                    duration={1800}
+                    client:load
+                />
 
-            <div
-                class="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg"
-            >
-                <div
-                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/30 mb-4 mx-auto"
-                >
-                    <div class="w-6 h-6 text-amber-600">
-                        <Award class="w-full h-full" />
-                    </div>
-                </div>
-                <div class="text-3xl font-bold text-gradient-gold">20+</div>
-                <div class="text-sm text-muted-foreground mt-1">Años</div>
+                <CounterCard
+                    icon="award"
+                    targetValue={20}
+                    suffix="+"
+                    label="Años"
+                    duration={1500}
+                    client:load
+                />
             </div>
         </div>
     </div>

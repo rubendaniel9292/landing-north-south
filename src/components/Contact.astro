@@ -1,0 +1,208 @@
+---
+import CheckCircle from "./icons/CheckCircle.astro";
+import Arrow from "./icons/Arrow.astro";
+---
+
+<section id="contact" class="py-10 relative overflow-hidden">
+    {/* Gradient Background */}
+    <div
+        class="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-gray-50"
+    >
+    </div>
+    <div
+        class="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container relative z-10 mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Column - Content */}
+                <div class="space-y-8">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 mb-6"
+                        >
+                            <span class="text-sm font-medium text-amber-900"
+                                >Cotización Gratuita</span
+                            >
+                        </div>
+                        <h2
+                            class="font-title text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900"
+                        >
+                            Obtén tu cotización en <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600"
+                                >en pocos minutos</span
+                            >
+                        </h2>
+                        <p class="font-body text-lg text-gray-600 leading-relaxed">
+                            Completa el formulario y recibe propuestas
+                            personalizadas de las mejores aseguradoras del
+                            mercado.
+                        </p>
+                    </div>
+
+                    {/* Benefits */}
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 text-amber-600">
+                                <CheckCircle />
+                            </div>
+                            <span class="text-gray-700"
+                                >Comparación de múltiples aseguradoras</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 text-amber-600">
+                                <CheckCircle />
+                            </div>
+                            <span class="text-gray-700"
+                                >Asesoría personalizada sin costo</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 text-amber-600">
+                                <CheckCircle />
+                            </div>
+                            <span class="text-gray-700"
+                                >Respuesta en menos de 24 horas</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 text-amber-600">
+                                <CheckCircle />
+                            </div>
+                            <span class="text-gray-700"
+                                >Proceso 100% digital y seguro</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Column - Form */}
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-3xl blur-2xl"
+                    >
+                    </div>
+                    <form
+                        class="relative bg-white border border-gray-200 rounded-3xl p-8 shadow-2xl space-y-6"
+                        method="POST"
+                        action="#"
+                    >
+                        <div class="space-y-2">
+                            <label
+                                for="name"
+                                class="block text-sm font-medium text-gray-700"
+                                >Nombre completo</label
+                            >
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="Juan Pérez"
+                                class="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                                required
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="email"
+                                class="block text-sm font-medium text-gray-700"
+                                >Correo electrónico</label
+                            >
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="juan@ejemplo.com"
+                                class="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                                required
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="phone"
+                                class="block text-sm font-medium text-gray-700"
+                                >Teléfono</label
+                            >
+                            <input
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                placeholder="+52 55 1234 5678"
+                                class="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                                required
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="insurance-type"
+                                class="block text-sm font-medium text-gray-700"
+                                >Tipo de seguro</label
+                            >
+                            <select
+                                id="insurance-type"
+                                name="insurance-type"
+                                class="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors bg-white"
+                                required
+                            >
+                                <option disabled="">Selecciona un tipo</option>
+                                <option value="vida">Seguro de Vida</option>
+                                <option value="salud">Seguro de Salud</option>
+                                <option value="vehiculo"
+                                    >Seguro Vehicular</option
+                                >
+                                <option value="ahorro">Seguro de Ahorro</option>
+                                <option value="hogar">Seguro de Hogar</option>
+                                <option value="empresarial"
+                                    >Seguro Empresarial</option
+                                >
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="message"
+                                class="block text-sm font-medium text-gray-700"
+                                >Mensaje adicional (opcional)</label
+                            >
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                placeholder="Compártenos detalles adicionales sobre tus necesidades..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors resize-none"
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full h-12 gradient-gold text-white border-0 text-base rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group"
+                        >
+                            Obtener Cotización
+                            <div
+                                class="w-7 h-7 text-white group-hover:translate-x-1 transition-transform"
+                            >
+                                <Arrow />
+                            </div>
+                        </button>
+
+                        <p class="text-xs text-center text-gray-500">
+                            Al enviar este formulario, aceptas nuestra política
+                            de privacidad y términos de servicio.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

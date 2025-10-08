@@ -1,0 +1,214 @@
+---
+import Heart from "./icons/Heart.astro";
+import Shield from "./icons/Shield.astro";
+import Car from "./icons/Car.astro";
+import PiggyBank from "./icons/PiggyBank.astro";
+import Home from "./icons/Home.astro";
+import User from "./icons/User.astro";
+
+const insuranceTypes = [
+    {
+        icon: Heart,
+        title: "Seguro de Vida",
+        description:
+            "Protege a tu familia con cobertura completa y beneficios garantizados.",
+        features: [
+            "Cobertura flexible",
+            "Beneficios garantizados",
+            "Primas accesibles",
+        ],
+        colors: {
+            bg: "from-pink-500 to-pink-600",
+            bgHover: "from-pink-600 to-pink-700",
+            icon: "text-white",
+            iconHover: "text-white",
+            button: "from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700",
+        },
+    },
+    {
+        icon: Shield,
+        title: "Seguro de Salud",
+        description:
+            "Acceso a la mejor atención médica con cobertura nacional e internacional.",
+        features: [
+            "Red médica amplia",
+            "Cobertura internacional",
+            "Sin límite de edad",
+        ],
+        colors: {
+            bg: "from-blue-500 to-blue-600",
+            bgHover: "from-blue-600 to-blue-700",
+            icon: "text-white",
+            iconHover: "text-white",
+            button: "from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700",
+        },
+    },
+    {
+        icon: Car,
+        title: "Seguro Vehicular",
+        description:
+            "Protección total para tu vehículo con asistencia 24/7 en todo el país.",
+        features: [
+            "Asistencia 24/7",
+            "Cobertura total",
+            "Talleres autorizados",
+        ],
+        colors: {
+            bg: "from-orange-500 to-orange-600",
+            bgHover: "from-orange-600 to-orange-700",
+            icon: "text-white",
+            iconHover: "text-white",
+            button: "from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700",
+        },
+    },
+    {
+        icon: PiggyBank,
+        title: "Seguro de Ahorro",
+        description:
+            "Planifica tu futuro con productos de ahorro e inversión seguros.",
+        features: [
+            "Rendimientos atractivos",
+            "Ahorro programado",
+            "Retiros flexibles",
+        ],
+        colors: {
+            bg: "from-green-500 to-green-600",
+            bgHover: "from-green-600 to-green-700",
+            icon: "text-white",
+            iconHover: "text-white",
+            button: "from-green-500 to-green-600 hover:from-green-600 hover:to-green-700",
+        },
+    },
+    {
+        icon: Home,
+        title: "Seguro de Hogar",
+        description:
+            "Protege tu patrimonio contra incendios, robos y desastres naturales.",
+        features: [
+            "Cobertura amplia",
+            "Reposición garantizada",
+            "Asistencia inmediata",
+        ],
+        colors: {
+            bg: "from-purple-500 to-purple-600",
+            bgHover: "from-purple-600 to-purple-700",
+            icon: "text-white",
+            iconHover: "text-white",
+            button: "from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700",
+        },
+    },
+    {
+        icon: User,
+        title: "Seguros Empresariales",
+        description:
+            "Soluciones integrales para proteger tu negocio y colaboradores.",
+        features: [
+            "Planes corporativos",
+            "Cobertura grupal",
+            "Asesoría personalizada",
+        ],
+        colors: {
+            bg: "from-indigo-500 to-indigo-600",
+            bgHover: "from-indigo-600 to-indigo-700",
+            icon: "text-white",
+            iconHover: "text-white",
+            button: "from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700",
+        },
+    },
+];
+---
+
+<section id="insurance" class="md:py-20 bg-gradient-to-tr from-amber-200 via-orange-200 to-amber-300/80">
+    <div class="container mx-auto px-4">
+        {/* Header Section */}
+        <div class="mx-auto max-w-2xl text-center mb-16">
+            <h2
+                class="font-title text-balance text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl mb-4"
+            >
+                Tipos de seguros que ofrecemos
+            </h2>
+            <p class="font-body text-pretty text-lg text-gray-600 leading-relaxed">
+                Soluciones de protección adaptadas a cada etapa de tu vida y
+                necesidades específicas.
+            </p>
+        </div>
+
+        {/* Insurance Cards Grid */}
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {
+                insuranceTypes.map((insurance, index) => {
+                    const Icon = insurance.icon;
+                    return (
+                        <div class="group relative overflow-hidden bg-white rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            {/* Gradient Overlay */}
+                            <div class="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-gray-100/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                            {/* Card Content */}
+                            <div class="relative p-8">
+                                {/* Icon Container */}
+                                <div
+                                    class={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${insurance.colors.bg} transition-all duration-300 group-hover:bg-gradient-to-br group-hover:${insurance.colors.bgHover} group-hover:shadow-lg text-white`}
+                                >
+                                    <Icon class="h-7 w-7 text-white fill-white" />
+                                </div>
+
+                                {/* Title */}
+                                <h3 class="font-subtitle text-xl font-bold text-gray-900 mb-3">
+                                    {insurance.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p class="font-body text-base leading-relaxed text-gray-600 mb-6">
+                                    {insurance.description}
+                                </p>
+
+                                {/* Features List */}
+                                <ul class="space-y-3">
+                                    {insurance.features.map((feature) => (
+                                        <li class="flex items-center gap-3 text-sm text-gray-700">
+                                            <div
+                                                class={`h-2 w-2 rounded-full bg-gradient-to-r ${insurance.colors.button.split(" ")[0]} ${insurance.colors.button.split(" ")[1]}`}
+                                            />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* CTA Button */}
+                                <div class="mt-6 pt-4 border-t border-gray-100">
+                                    <a
+                                        href="#contact"
+                                        class={`w-full bg-gradient-to-r ${insurance.colors.button} text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:shadow-lg block text-center`}
+                                    >
+                                        Cotizar {insurance.title}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+
+        {/* Bottom CTA Section */}
+        <div class="mt-16 text-center">
+            <div
+                class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 max-w-2xl mx-auto"
+            >
+                <h3 class="font-subtitle text-2xl font-bold text-gray-900 mb-4">
+                    ¿No encuentras lo que buscas?
+                </h3>
+                <p class="font-body text-gray-600 mb-6">
+                    Nuestros asesores especializados te ayudarán a encontrar la
+                    cobertura perfecta para tus necesidades específicas.
+                </p>
+                <a
+                    href="#contact"
+                    class="gradient-gold text-white font-semibold py-3 px-8 rounded-lg hover:shadow-lg transition-all duration-300 inline-block"
+                >
+                    Hablar con un Asesor
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

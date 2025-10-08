@@ -1,7 +1,11 @@
 ---
-import Home from "../components/Home.astro";
-import Navbar from "../components/Navbar.jsx";
 import "../styles/global.css";
+import Home from "../components/Home.astro";
+import Insurance from "../components/Insurance.astro";
+import Companies from "../components/Companies.astro";
+import Navbar from "../components/Navbar.jsx";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
     title?: string;
@@ -22,15 +26,23 @@ const { title = "National North South" } = Astro.props;
             name="description"
             content="Asesora de seguros National North South."
         />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header class="sticky top-0 z-50 transition-all duration-300">
             <Navbar client:load />
-            <Home />
         </header>
 
         <main>
             <slot />
+            <Home />
+            <Insurance />
+            <Companies />
+            <Contact />
         </main>
+        <Footer />
     </body>
 </html>

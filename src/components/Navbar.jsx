@@ -1,5 +1,39 @@
 import { useState } from "react";
 
+// Función para scroll suave personalizado con animación más lenta
+const smoothScrollTo = (elementId) => {
+    const element = document.getElementById(elementId.replace('#', ''));
+    if (element) {
+        const navHeight = 80; // Altura del navbar
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight;
+        const startPosition = window.pageYOffset;
+        const distance = offsetPosition - startPosition;
+        const duration = 1200; // Duración en milisegundos (más lento)
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            // Función de easing para suavizar la animación
+            const easeInOutCubic = progress => progress < 0.5 
+                ? 4 * progress * progress * progress 
+                : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
+            
+            const run = startPosition + distance * easeInOutCubic(progress);
+            window.scrollTo(0, run);
+            
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            }
+        }
+        
+        requestAnimationFrame(animation);
+    }
+};
+
 // Componentes de iconos
 const BarsIcon = () => (
     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
@@ -18,14 +52,16 @@ const Navbar = () => {
 
     // 📋 Opciones de menú en formato de objeto
     const menuItems = [
-        { href: "#inicio", label: "Inicio" },
-        { href: "#seguros", label: "Seguros" },
-        { href: "#nosotros", label: "Nosotros" },
-        { href: "#contacto", label: "Contacto" }
+        { href: "#home", label: "Inicio" },
+        { href: "#insurance", label: "Seguros" },
+        { href: "#companies", label: "Compañías" },
+        //{ href: "/about", label: "Nosotros" },
+        { href: "#contact", label: "Contacto" },
+
     ];
 
     return (
-        <nav className="bg-white shadow-lg">
+        <nav className="bg-white shadow-lg sticky top-0 z-50">
             <div className="container mx-auto px-4">
                 <div className="flex h-20 items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -37,10 +73,10 @@ const Navbar = () => {
                             />
                         </div>
                         <div className="flex flex-col justify-center">
-                            <span className="text-base sm:text-lg font-bold text-gray-800 leading-tight">
+                            <span className="font-title text-base sm:text-lg font-bold text-gray-800 leading-tight">
                                 National North South
                             </span>
-                            <span className="text-xs sm:text-sm text-gray-600 leading-tight">
+                            <span className="font-body text-xs sm:text-sm text-gray-600 leading-tight">
                                 Asesora de seguros
                             </span>
                         </div>
@@ -49,18 +85,27 @@ const Navbar = () => {
 
                     <nav className="hidden md:flex items-center gap-6">
                         {menuItems.map((item, index) => (
-                            <a
+                            <button
                                 key={index}
-                                href={item.href}
-                                className="text-lg font-bold  hover:text-amber-600  transition-colors"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    smoothScrollTo(item.href);
+                                }}
+                                className="font-subtitle text-lg font-bold hover:text-amber-600 transition-colors cursor-pointer bg-transparent border-none"
                             >
                                 {item.label}
-                            </a>
+                            </button>
                         ))}
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <button className="hidden sm:inline-flex gradient-gold text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors font-semibold">
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                smoothScrollTo('#contact');
+                            }}
+                            className="hidden sm:inline-flex gradient-gold text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors font-subtitle font-semibold cursor-pointer border-none"
+                        >
                             Cotizar ahora
                         </button>
                         <button
@@ -77,16 +122,26 @@ const Navbar = () => {
                 <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} border-t border-gray-200 py-4`}>
                     <div className="space-y-2">
                         {menuItems.map((item, index) => (
-                            <a
+                            <button
                                 key={index}
-                                href={item.href}
-                                className="block text-center text-gray-700 py-2 px-4 hover:bg-gray-100 rounded-md transition-colors"
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    smoothScrollTo(item.href);
+                                    setIsOpen(false);
+                                }}
+                                className="block w-full text-center text-gray-700 py-2 px-4 hover:bg-gray-100 rounded-md transition-colors cursor-pointer bg-transparent border-none font-subtitle"
                             >
                                 {item.label}
-                            </a>
+                            </button>
                         ))}
-                        <button className="w-full mt-4 gradient-gold text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors font-semibold">
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                smoothScrollTo('#contact');
+                                setIsOpen(false);
+                            }}
+                            className="w-full mt-4 gradient-gold text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors font-subtitle font-semibold cursor-pointer border-none"
+                        >
                             Cotizar ahora
                         </button>
                     </div>

@@ -1,0 +1,75 @@
+---
+import MainLayouts from '../layouts/MainLayouts.astro';
+---
+
+<MainLayouts title="Nosotros - National North South">
+    <!-- Este contenido va al <slot /> del layout -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Sobre National North South
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Somos una empresa especializada en asesoría de seguros con más de 20 años de experiencia 
+                    en el mercado, dedicada a proteger a familias y empresas.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Nuestra Misión</h3>
+                        <p class="text-gray-700">
+                            Brindar tranquilidad y seguridad a nuestros clientes a través de soluciones 
+                            integrales de seguros, con el respaldo de las mejores aseguradoras del mercado.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Nuestra Visión</h3>
+                        <p class="text-gray-700">
+                            Ser la empresa líder en asesoría de seguros, reconocida por nuestra excelencia 
+                            en el servicio y compromiso con la protección de nuestros clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección adicional específica de esta página -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                    ¿Por qué elegirnos?
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-blue-600 text-xl">🎯</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Experiencia</h4>
+                        <p class="text-gray-600 text-sm">Más de 20 años en el mercado asegurador</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-green-600 text-xl">🤝</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Confianza</h4>
+                        <p class="text-gray-600 text-sm">Miles de clientes satisfechos nos respaldan</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-orange-600 text-xl">📞</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Soporte 24/7</h4>
+                        <p class="text-gray-600 text-sm">Atención personalizada cuando la necesites</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</MainLayouts>

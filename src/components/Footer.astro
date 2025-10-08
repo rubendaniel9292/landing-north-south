@@ -1,0 +1,192 @@
+---
+import Mail from "./icons/Mail.astro";
+import Phone from "./icons/Phone.astro";
+import MapPin from "./icons/MapPin.astro";
+---
+
+<footer class="border-t border-amber-200 bg-gradient-to-b from-gray-800 to-gray-900">
+    <div
+        class="container mx-auto px-4 lg:px-8 py-16"
+    >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            {/* Company Info */}
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <img
+                        src="/images/logonorthsouth.jpg"
+                        alt="National North South"
+                        class="h-12 w-12 object-contain rounded-lg"
+                    />
+                    <div>
+                        <div class="font-title font-bold text-white">National North South</div>
+                        <div class="font-body text-xs text-gray-300">Asesora de Seguros</div>
+                    </div>
+                </div>
+
+                <p class="font-body text-sm text-gray-300 leading-relaxed">
+                    Somos una empresa especializada en asesoría de seguros con
+                    más de 20 años de experiencia en el mercado, dedicada a
+                    proteger a familias y empresas.
+                </p>
+            </div>
+
+            {/* Seguros */}
+            <div class="hidden md:block">
+                <h3 class="font-subtitle font-bold text-white mb-4">Seguros</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguro de Vida
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguro de Salud
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguro Vehicular
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguro de Ahorro
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguro de Hogar
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguro Empresarial
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Enlaces Útiles */}
+            <div class="hidden md:block text-white">
+                <h3 class="font-subtitle font-bold mb-4">Enlaces Útiles</h3>
+                <ul class="space-y-3 text-sm">
+                    <li>
+                        <a
+                            href="#inicio"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#seguros"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Seguros
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#companias"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Compañías
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Contacto */}
+            <div class="text-white">
+                <h3 class="font-subtitle font-bold mb-4">Contacto</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <div
+                            class="w-7 h-7 text-amber-600 mt-0.5 flex-shrink-0"
+                        >
+                            <Mail />
+                        </div>
+                        <a
+                            href="mailto:info@northsouth.com"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            info@northsouth.com
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <div
+                            class="w-7 h-7 text-amber-600 mt-0.5 flex-shrink-0"
+                        >
+                            <Phone />
+                        </div>
+                        <a
+                            href="tel:+525512345678"
+                            class="hover:text-amber-600 transition-colors"
+                        >
+                            +1234567890
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <div
+                            class="w-7 h-7 text-amber-600 mt-0.5 flex-shrink-0"
+                        >
+                            <MapPin />
+                        </div>
+                        <span> Quevedo - Ecuador </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div
+            class="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600"
+        >
+            <p>© 2025 National North South. Todos los derechos reservados.</p>
+            <p>Desarrollado por [Nombre/sitio web]</p>
+            {
+                /* Placeholder for future content 
+            
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-amber-600 transition-colors">
+                    Privacidad
+                </a>
+                <a href="#" class="hover:text-amber-600 transition-colors">
+                    Términos
+                </a>
+                <a href="#" class="hover:text-amber-600 transition-colors">
+                    Cookies
+                </a>
+                */
+            }
+        </div>
+    </div>
+</footer>
