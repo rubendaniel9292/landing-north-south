@@ -68,7 +68,7 @@ const ContactForm = () => {
         setStatus({ loading: true, success: false, error: false, message: '' });
 
         try {
-            const response = await axios.post('https://formsubmit.co/ajax/rubenrivas_17@hotmail.com', {
+            const response = await axios.post('https://formsubmit.co/ajax/negocios@nationalnorthsouth.com', {
                 ...formData,
                 '_subject': 'Nueva cotización de seguro desde tu landing',
                 '_captcha': 'false',
@@ -240,7 +240,7 @@ const ContactForm = () => {
                         required
                         disabled={status.loading}
                     >
-                        <option value selected disabled>Selecciona un tipo</option>
+                        <option value="" selected disabled>Selecciona un tipo</option>
                         <option value="vida">Seguro de Vida</option>
                         <option value="salud">Seguro de Salud</option>
                         <option value="vehiculo">Seguro Vehicular</option>
