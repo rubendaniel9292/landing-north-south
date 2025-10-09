@@ -128,9 +128,9 @@ import MapPin from "./icons/MapPin.astro";
             <div class="text-white">
                 <h3 class="font-subtitle font-bold mb-4">Contacto</h3>
                 <ul class="space-y-3 text-sm">
-                    <li class="flex items-start gap-2">
+                    <li class="flex items-center gap-3">
                         <div
-                            class="w-7 h-7 text-amber-600 mt-0.5 flex-shrink-0"
+                            class="w-5 h-5 text-amber-600 flex-shrink-0"
                         >
                             <Mail />
                         </div>
@@ -141,9 +141,9 @@ import MapPin from "./icons/MapPin.astro";
                             info@northsouth.com
                         </a>
                     </li>
-                    <li class="flex items-start gap-2">
+                    <li class="flex items-center gap-3">
                         <div
-                            class="w-7 h-7 text-amber-600 mt-0.5 flex-shrink-0"
+                            class="w-5 h-5 text-amber-600 flex-shrink-0"
                         >
                             <Phone />
                         </div>
@@ -154,9 +154,9 @@ import MapPin from "./icons/MapPin.astro";
                             +1234567890
                         </a>
                     </li>
-                    <li class="flex items-start gap-2">
+                    <li class="flex items-center gap-3">
                         <div
-                            class="w-7 h-7 text-amber-600 mt-0.5 flex-shrink-0"
+                            class="w-5 h-5 text-amber-600 flex-shrink-0"
                         >
                             <MapPin />
                         </div>
@@ -171,22 +171,17 @@ import MapPin from "./icons/MapPin.astro";
             class="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600"
         >
             <p>© 2025 National North South. Todos los derechos reservados.</p>
-            <p>Desarrollado por [Nombre/sitio web]</p>
-            {
-                /* Placeholder for future content 
             
             <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-amber-600 transition-colors">
-                    Privacidad
+                <a 
+                    href="/politica-privacidad" 
+                    class="hover:text-amber-600 transition-colors font-medium"
+                >
+                    Política de Privacidad y Protección de Datos Personales
                 </a>
-                <a href="#" class="hover:text-amber-600 transition-colors">
-                    Términos
-                </a>
-                <a href="#" class="hover:text-amber-600 transition-colors">
-                    Cookies
-                </a>
-                */
-            }
+            </div>
+            
+            <p class="hidden md:block">Desarrollado por [Nombre/sitio web]</p>
         </div>
     </div>
 </footer>
