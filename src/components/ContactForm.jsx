@@ -68,12 +68,14 @@ const ContactForm = () => {
         setStatus({ loading: true, success: false, error: false, message: '' });
 
         try {
-            const response = await axios.post('https://formsubmit.co/ajax/negocios@nationalnorthsouth.com', {
+            const response = await axios.post('https://formsubmit.co/ajax/rubenrivas_17@hotmail.com', {
                 ...formData,
-                '_subject': 'Nueva cotización de seguro desde tu landing',
+                '_subject': 'Nueva cotización de seguro desde National North South',
                 '_captcha': 'false',
                 '_template': 'table',
-                'turnstile-token': turnstileToken // Enviar el token de verificación
+                '_cc': 'negocios@nationalnorthsouth.com', // Copia al correo empresarial
+                'turnstile-token': turnstileToken, // Enviar el token de verificación
+                'Origen': 'Landing Page National North South' // Campo adicional para identificar la fuente
             });
 
             console.log('Response:', response);
