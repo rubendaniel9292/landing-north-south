@@ -5,7 +5,7 @@ import Turnstile from 'react-turnstile';
 
 const ContactForm = () => {
     // Configuración de Turnstile
-    const siteKey = import.meta.env.VITE_REACT_APP_TURNSTILE_SITE_KEY || "1x00000000000000000000AA";
+    const siteKey = "0x4AAAAAACC8s9pEy0nHk7ZQ" || "1x00000000000000000000AA";
 
     // Debug: verificar que la sitekey se está cargando
     console.log('Turnstile Site Key:', siteKey);
