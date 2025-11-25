@@ -68,7 +68,7 @@ const ContactForm = () => {
         setStatus({ loading: true, success: false, error: false, message: '' });
 
         try {
-            const response = await axios.post('https://formsubmit.co/ajax/rubenrivas_17@hotmail.com', {
+            const response = await axios.post('https://formsubmit.co/ajax/jose_rivas2008@hotmail.com', {
                 ...formData,
                 '_subject': 'Nueva cotización de seguro desde National North South',
                 '_captcha': 'false',

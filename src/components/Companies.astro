@@ -1,88 +1,124 @@
 ---
 const partners = [
-    { 
-        name: "BMI", 
-        logo: "/images/logo-companies/bmi.webp",
-        alt: "BMI Insurance Logo"
-    },
+  {
+    name: "BMI",
+    logo: "/images/logo-companies/bmi.webp",
+    alt: "BMI Insurance Logo",
+  },
+  /*
     { 
         name: "OLE", 
         logo: "/images/logo-companies/Ole-logo.png",
         alt: "Ole Insurance Logo"
     },
-    { 
-        name: "BUPA", 
-        logo: "/images/logo-companies/bupalogo.png",
-        alt: "Bupa Insurance Logo"
-    },
-    { 
-        name: "GENERALI", 
-        logo: "/images/logo-companies/generali-logo-big.svg",
-        alt: "Generali Insurance Logo"
-    },
-    { 
-        name: "SWEDYAN", 
-        logo: "/images/logo-companies/logo-sweaden.png",
-        alt: "Swedyan Insurance Logo"
-    },
+    */
+  {
+    name: "BUPA",
+    logo: "/images/logo-companies/bupalogo.png",
+    alt: "Bupa Insurance Logo",
+  },
+  {
+    name: "GENERALI",
+    logo: "/images/logo-companies/generali-logo-big.svg",
+    alt: "Generali Insurance Logo",
+  },
+  {
+    name: "SWEDYAN",
+    logo: "/images/logo-companies/logo-sweaden.png",
+    alt: "Swedyan Insurance Logo",
+  },
+  {
+    name: "VUMI",
+    logo: "/images/logo-companies/vumi.jpg",
+    alt: "Vumi Insurance Logo",
+  },
+  {
+    name: "SEGUROS UNIDOS",
+    logo: "/images/logo-companies/unidos.jpg",
+    alt: "Seguros Unidos Insurance Logo",
+  },
+  {
+    name: "BEST DOCTORS INSURANCE",
+    logo: "/images/logo-companies/best.jpg",
+    alt: "Best Doctors Insurance Logo",
+  },
+  /*
     { 
         name: "MULTINATIONAL", 
         logo: "/images/logo-companies/multinational-logo.png",
         alt: "Multinational Insurance Company Logo"
     },
+    */
 ];
 ---
 
 <section id="companies" class="py-20 bg-gray-300">
-    <div class="container mx-auto px-4">
-        <div class="mx-auto max-w-2xl text-center mb-12">
-            <h2 class="font-title text-balance text-3xl font-bold tracking-tight text-gray-900 md:text-4xl mb-4">
-                Trabajamos con las mejores aseguradoras
-            </h2>
-            <p class="font-body text-pretty text-lg text-gray-600 leading-relaxed">
-                Alianzas estratégicas con compañías líderes para ofrecerte las mejores opciones del mercado, entre ellas:
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            {partners.map((partner, index) => (
-                <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-gray-300">
-                    {/* Logo Container */}
-                    <div class={`w-full h-24 mb-4 flex items-center justify-center rounded-lg p-3 ${
-                        partner.name === 'MULTINATIONAL' 
-                            ? 'bg-gradient-to-r from-red-900 to-red-800' 
-                            : 'bg-gray-50/50'
-                    }`}>
-                        <img
-                            src={partner.logo}
-                            alt={partner.alt}
-                            class="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-105"
-                            loading="lazy"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-                        />
-                        <div style="display: none;" class="text-xs text-gray-400 text-center">
-                            Logo no disponible<br/>{partner.name}
-                        </div>
-                    </div>
-                    
-                    {/* Company Name */}
-                    <div class="text-center">
-                        <h3 class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 leading-tight">
-                            {partner.name}
-                        </h3>
-                    </div>
-                </div>
-            ))}
-        </div>
-
-        {/* Trust Badge */}
-        <div class="mt-16 text-center">
-            <div class="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-gray-200 shadow-sm">
-                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span class="text-sm font-medium text-gray-700">
-                    +15 aseguradoras verificadas y certificadas por las autoridades correspondientes
-                </span>
-            </div>
-        </div>
+  <div class="container mx-auto px-4">
+    <div class="mx-auto max-w-2xl text-center mb-12">
+      <h2
+        class="font-title text-balance text-3xl font-bold tracking-tight text-gray-900 md:text-4xl mb-4"
+      >
+        Trabajamos con las mejores aseguradoras
+      </h2>
+      <p class="font-body text-pretty text-lg text-gray-600 leading-relaxed">
+        Alianzas estratégicas con compañías líderes para ofrecerte las mejores
+        opciones del mercado, entre ellas:
+      </p>
     </div>
+
+    <div
+      class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7"
+    >
+      {
+        partners.map((partner, index) => (
+          <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-gray-300">
+            {/* Logo Container */}
+            <div
+              class={`w-full h-24 mb-4 flex items-center justify-center rounded-lg p-3 ${
+                partner.name === "MULTINATIONAL"
+                  ? "bg-gradient-to-r from-red-900 to-red-800"
+                  : "bg-gray-50/50"
+              }`}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.alt}
+                class="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-105"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <div
+                style="display: none;"
+                class="text-xs text-gray-400 text-center"
+              >
+                Logo no disponible
+                <br />
+                {partner.name}
+              </div>
+            </div>
+
+            {/* Company Name */}
+            <div class="text-center">
+              <h3 class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 leading-tight">
+                {partner.name}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* Trust Badge */}
+    <div class="mt-16 text-center">
+      <div
+        class="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-gray-200 shadow-sm"
+      >
+        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        <span class="text-sm font-medium text-gray-700">
+          +15 aseguradoras verificadas y certificadas por las autoridades
+          correspondientes
+        </span>
+      </div>
+    </div>
+  </div>
 </section>

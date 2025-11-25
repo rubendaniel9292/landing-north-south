@@ -4,11 +4,13 @@ import Phone from "./icons/Phone.astro";
 import MapPin from "./icons/MapPin.astro";
 ---
 
-<footer class="border-t border-amber-200 bg-gradient-to-b from-gray-800 to-gray-900">
-    <div
-        class="container mx-auto px-4 lg:px-8 py-16"
-    >
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<footer
+    class="border-t border-amber-200 bg-gradient-to-b from-gray-800 to-gray-900"
+>
+    <div class="container mx-auto px-4 lg:px-8 py-16">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
             {/* Company Info */}
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
@@ -18,8 +20,12 @@ import MapPin from "./icons/MapPin.astro";
                         class="h-12 w-12 object-contain rounded-lg"
                     />
                     <div>
-                        <div class="font-title font-bold text-white">National North South</div>
-                        <div class="font-body text-xs text-gray-300">Asesora de Seguros</div>
+                        <div class="font-title font-bold text-white">
+                            National North South
+                        </div>
+                        <div class="font-body text-xs text-gray-300">
+                            Asesora de Seguros
+                        </div>
                     </div>
                 </div>
 
@@ -129,35 +135,29 @@ import MapPin from "./icons/MapPin.astro";
                 <h3 class="font-subtitle font-bold mb-4">Contacto</h3>
                 <ul class="space-y-3 text-sm">
                     <li class="flex items-center gap-3">
-                        <div
-                            class="w-5 h-5 text-amber-600 flex-shrink-0"
-                        >
+                        <div class="w-5 h-5 text-amber-600 flex-shrink-0">
                             <Mail />
                         </div>
                         <a
-                            href="mailto:info@northsouth.com"
+                            href="mailto:negocios@nationalnorthsouth.com"
                             class="hover:text-amber-600 transition-colors"
                         >
-                            info@northsouth.com
+                            negocios@nationalnorthsouth.com
                         </a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div
-                            class="w-5 h-5 text-amber-600 flex-shrink-0"
-                        >
+                        <div class="w-5 h-5 text-amber-600 flex-shrink-0">
                             <Phone />
                         </div>
                         <a
                             href="tel:+525512345678"
                             class="hover:text-amber-600 transition-colors"
                         >
-                            +1234567890
+                            +593987671953
                         </a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div
-                            class="w-5 h-5 text-amber-600 flex-shrink-0"
-                        >
+                        <div class="w-5 h-5 text-amber-600 flex-shrink-0">
                             <MapPin />
                         </div>
                         <span> Quevedo - Ecuador </span>
@@ -171,17 +171,22 @@ import MapPin from "./icons/MapPin.astro";
             class="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600"
         >
             <p>© 2025 National North South. Todos los derechos reservados.</p>
-            
+
             <div class="flex items-center gap-6">
-                <a 
-                    href="/politica-privacidad" 
+                <a
+                    href="/politica-privacidad"
                     class="hover:text-amber-600 transition-colors font-medium"
                 >
                     Política de Privacidad y Protección de Datos Personales
                 </a>
             </div>
-            
-            <p class="hidden md:block">Desarrollado por [Nombre/sitio web]</p>
+
+            <p class="hidden md:block">
+                Desarrollado por <a
+                    href="https://danielwebdev.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer">danielwebdev.dev</a>
+            </p>
         </div>
     </div>
 </footer>
