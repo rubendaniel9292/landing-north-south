@@ -8,7 +8,7 @@ const ContactForm = () => {
     const siteKey = "0x4AAAAAACC8s9pEy0nHk7ZQ" || "1x00000000000000000000AA";
 
     // Debug: verificar que la sitekey se está cargando
-    console.log('Turnstile Site Key:', siteKey);
+    //console.log('Turnstile Site Key:', siteKey);
 
     const [formData, setFormData] = useState({
         'Nombre completo': '',
@@ -41,7 +41,6 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validar que el consentimiento esté marcado
         if (!consentimiento) {
             Swal.fire({
                 title: 'Consentimiento requerido',
@@ -53,7 +52,6 @@ const ContactForm = () => {
             return;
         }
 
-        // Validar que Turnstile esté verificado
         if (!turnstileToken) {
             Swal.fire({
                 title: 'Verificación requerida',
@@ -68,14 +66,11 @@ const ContactForm = () => {
         setStatus({ loading: true, success: false, error: false, message: '' });
 
         try {
-            const response = await axios.post('https://formsubmit.co/ajax/jose_rivas2008@hotmail.com', {
+            // Cambiar la URL a tu función de Netlify
+            const response = await axios.post('/.helper/contact', {
                 ...formData,
-                '_subject': 'Nueva cotización de seguro desde National North South',
-                '_captcha': 'false',
-                '_template': 'table',
-                '_cc': 'negocios@nationalnorthsouth.com', // Copia al correo empresarial
-                'turnstile-token': turnstileToken, // Enviar el token de verificación
-                'Origen': 'Landing Page National North South' // Campo adicional para identificar la fuente
+                'turnstile-token': turnstileToken,
+                'Origen': 'Landing Page National North South'
             });
 
             console.log('Response:', response);
@@ -87,7 +82,6 @@ const ContactForm = () => {
                 message: '¡Mensaje enviado exitosamente! Te contactaremos pronto.'
             });
 
-            // Mostrar SweetAlert de éxito
             Swal.fire({
                 title: '¡Éxito!',
                 text: 'Tu mensaje ha sido enviado correctamente. Te contactaremos pronto.',
@@ -95,16 +89,9 @@ const ContactForm = () => {
                 confirmButtonText: 'Perfecto',
                 confirmButtonColor: '#f59e0b',
                 timer: 5000,
-                timerProgressBar: true,
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
+                timerProgressBar: true
             });
 
-            // Limpiar formulario después de 5 segundos
             setTimeout(() => {
                 setFormData({
                     'Nombre completo': '',
@@ -114,8 +101,8 @@ const ContactForm = () => {
                     'Mensaje adicional': ''
                 });
                 setStatus({ loading: false, success: false, error: false, message: '' });
-                setTurnstileToken(''); // Limpiar token de Turnstile
-                setConsentimiento(false); // Limpiar consentimiento
+                setTurnstileToken('');
+                setConsentimiento(false);
             }, 5000);
 
         } catch (error) {
@@ -127,21 +114,12 @@ const ContactForm = () => {
                 message: 'Error al enviar el mensaje. Por favor intenta nuevamente.'
             });
 
-            // Mostrar SweetAlert de error
             Swal.fire({
                 title: 'Error',
                 text: 'No se pudo enviar tu mensaje. Por favor verifica tu conexión e intenta nuevamente.',
                 icon: 'error',
                 confirmButtonText: 'Intentar de nuevo',
-                confirmButtonColor: '#ef4444',
-                timer: 5000,
-                timerProgressBar: true,
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
+                confirmButtonColor: '#ef4444'
             });
         }
     };
