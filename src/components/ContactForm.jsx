@@ -67,7 +67,7 @@ const ContactForm = () => {
 
         try {
             // Cambiar la URL a tu función de Netlify
-            const response = await axios.post('/.helper/contact', {
+            const response = await axios.post('/.netlify/functions/contact', {
                 ...formData,
                 'turnstile-token': turnstileToken,
                 'Origen': 'Landing Page National North South'
